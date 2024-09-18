@@ -1,1 +1,1 @@
-# besant-classes-training
+# besant_class_training
