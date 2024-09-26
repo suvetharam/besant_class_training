@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS class 1</title>
 </head>
 
 <body>
@@ -12,17 +9,21 @@
     <div style="background-color: crimson;" width="100px" ,height="100px">
         DIV1
     </div>
-    <div class="" boxbg">
+
+    <div class="boxbg">
         Div 2
     </div>
+
     <div>
         Div 3
     </div>
+
     <p> p1</p>
     <p class="boxbg">p2 </p>
     <p>p3</p>
+
     <style>
-        /*Tag selector*/
+        /* Tag selector */
         div {
             background-color: blue;
             width: 150px;
@@ -31,12 +32,12 @@
 
         }
 
-        /* universal selector*/
+        /* universal selector */
         * {
             margin-left: 50px;
         }
 
-        /*class selector*/
+        /* class selector */
         .boxbg {
             border: dotted 5px chocolate;
             width: 100px;
@@ -51,10 +52,10 @@
 
         }
 
-        /*pseudo selector*/
+        /* pseudo selector */
         p:hover {
             transform: scale(2);
-            transform:rotate(120deg);
+            transform: rotate(120deg);
         }
     </style>
 </body>
