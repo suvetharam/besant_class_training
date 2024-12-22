@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Way Intersection with Traffic Signal</title>
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #87CEEB;
+        }
+
+        /* Intersection Road Styling */
+        .intersection {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #333;
+        }
+
+        /* Roads (Top, Bottom, Left, Right) */
+        .road {
+            position: absolute;
+            background-color: #333;
+        }
+
+        .road.vertical {
+            width: 100px;
+            height: 400px;
+            left: 150px;
+        }
+
+        .road.horizontal {
+            height: 100px;
+            width: 400px;
+            top: 150px;
+        }
+
+        /* Lane Dividers for Roads */
+        .lane-divider {
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            background-image: linear-gradient(white 50%, transparent 50%);
+            background-size: 10px 40px;
+        }
+
+        .lane-divider.vertical {
+            left: 195px;
+            top: 0;
+            height: 100%;
+        }
+
+        .lane-divider.horizontal {
+            top: 195px;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Traffic Light */
+        .traffic-light {
+            position: absolute;
+            top: 180px;
+            left: 180px;
+            width: 40px;
+            height: 100px;
+            background-color: black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .light {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: gray;
+            /* Default state */
+        }
+
+        .light.red {
+            background-color: red;
+        }
+
+        .light.yellow {
+            background-color: yellow;
+        }
+
+        .light.green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="intersection">
+        <!-- Vertical Roads -->
+        <div class="road vertical"></div>
+        <div class="lane-divider vertical"></div>
+
+        <!-- Horizontal Roads -->
+        <div class="road horizontal"></div>
+        <div class="lane-divider horizontal"></div>
+
+        <!-- Traffic Light -->
+        <div class="traffic-light">
+            <div class="light red"></div> <!-- Red light -->
+            <div class="light yellow"></div> <!-- Yellow light -->
+            <div class="light green"></div> <!-- Green light -->
+        </div>
+    </div>
+</body>
+
+</html>

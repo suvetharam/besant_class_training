@@ -1,0 +1,173 @@
+<!--- pop() method-->
+
+<script>
+    function Pop(arr) {
+        if (arr.length === 0) {
+        }
+        const lastElement = arr[arr.length - 1];
+        arr.length = arr.length - 1;
+        return lastElement;
+    }
+</script>
+
+
+<!---  shift() method-->
+
+<script>
+    function Shift(arr) {
+        if (arr.length === 0) {
+            return undefined;
+        }
+        const firstElement = arr[0];
+        for (let i = 0; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr.length = arr.length - 1;
+        return firstElement;
+    }
+</script>
+
+
+<!--- unshift() method--->
+
+<script>
+    function Unshift(arr, elements) {
+        let numberOfElements = elements.length;
+        for (let i = arr.length - 1; i >= 0; i--) {
+            arr[i + numberOfElements] = arr[i];
+        }
+
+        for (let j = 0; j < numberOfElements; j++) {
+            arr[j] = elements[j];
+        }
+        return arr.length;
+    }
+</script>
+
+
+
+<!--- Includes of () method --->
+
+<script>
+    function Includes(array, valueToFind) {
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === valueToFind) {
+                return true;
+            }
+        }
+        return false;
+    }
+</script>
+
+
+<!---- index() method --->
+
+<script>
+    function IndexOf(array, valueToFind) {
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === valueToFind) {
+                return i;
+            }
+        }
+        return -1;
+    }
+</script>
+
+
+<!--- Last index()  --->
+<script>
+
+    function LastIndexOf(array, target) {
+
+        for (let i = array.length - 1; i >= 0; i--) {
+            if (array[i] === target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+</script>
+
+<!----  Reverse Method - start --->
+
+<script>
+    function Reverse(array) {
+        let start = 0;
+        let end = array.length - 1;
+        while (start < end) {
+            let temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+
+        return array;
+    }
+
+</script>
+
+<!----  Reverse Method - end --->
+
+ 
+<!--- Sort method  --->
+<script>
+    let numbers = [4, 2, 5, 1, 3];
+    numbers.sort(function (a, b) {
+        return a - b;
+    });
+    console.log(numbers);
+    numbers.sort(function (a, b) {
+        return b - a;
+    });
+    console.log(numbers);
+
+</script>
+
+
+
+          <!--- slice numbers --->
+<script>
+    function Slice(array, start = 0, end = array.length) {
+        let result = [];
+
+        if (start < 0) {
+            start = array.length + start;
+        }
+        if (end < 0) {
+            end = array.length + end;
+        }
+
+        start = Math.max(0, start);
+        end = Math.min(array.length, end);
+
+        for (let i = start; i < end; i++) {
+            result.push(array[i]);
+        }
+
+        return result;
+    }
+
+</script>
+
+
+<!---- Join method  --->
+<script>
+    function Join(array, separator = ',') {
+        let result = '';
+
+        for (let i = 0; i < array.length; i++) {
+            let element = array[i].toString();
+
+            if (i > 0) {
+                result += separator;
+            }
+            result += element;
+        }
+
+        return result;
+    }
+
+</script>

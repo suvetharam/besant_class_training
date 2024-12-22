@@ -1,0 +1,83 @@
+<!--- 3. Get An Input & Range From User And Print The Multiplication Table From The Given Range  --->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table Generator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Multiplication Table Generator</h2>
+        <form>
+            <!-- <form id="multiplicationForm"> -->
+            <div class="mb-3">
+                <label for="number" class="form-label">Enter a number:</label>
+                <input type="number" class="form-control" id="number" required>
+            </div>
+            <div class="mb-3">
+                <label for="range" class="form-label">Enter the start range:</label>
+                <input type="number" class="form-control" id="startRange" required>
+            </div>
+            <div class="mb-3">
+                <label for="range" class="form-label">Enter the End range:</label>
+                <input type="number" class="form-control" id="endRange" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" onclick="printTable()">Generate Table</button>
+        </form>
+
+        <div id="tableResult" class="mt-4"></div>
+    </div>
+
+    <script>
+
+
+        function printTable() {
+            //
+            event.preventDefault();
+
+            let number = document.getElementById("number").value;
+            let startRangeValue = document.getElementById("startRange").value;
+            let endRangeValue = document.getElementById("endRange").value;
+
+            let result = "<h4>Multiplication Table for " + number + ":</h4><ul class='list-group'>";
+
+            for (let i = startRangeValue; i <= endRangeValue; i++) {
+                result += "<li class='list-group-item'>" + number + " x " + i + " = " + (number * i) + "</li>";
+            }
+
+            result += "</ul>";
+            document.getElementById("tableResult").innerHTML = result;
+
+        }
+
+        // document.getElementById("multiplicationForm").addEventListener("submit", function (event) {
+        //     event.preventDefault();
+
+        //     let number = document.getElementById("number").value;
+        //     let startRangeValue = document.getElementById("startRange").value;
+        //     let endRangeValue = document.getElementById("endRange").value;
+
+        //     let result = "<h4>Multiplication Table for " + number + ":</h4><ul class='list-group'>";
+
+        //     for (let i = startRangeValue; i <= endRangeValue; i++) {
+        //         result += "<li class='list-group-item'>" + number + " x " + i + " = " + (number * i) + "</li>";
+        //     }
+
+        //     result += "</ul>";
+        //     document.getElementById("tableResult").innerHTML = result;
+        // });
+    </script>
+</body>
+
+</html>

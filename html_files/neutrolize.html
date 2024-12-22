@@ -1,0 +1,38 @@
+<!--  6. Get a number from user and Neutrolize into Single digit-->
+
+
+<div class="row mt-4">
+    <div class="col">Neutrolize to single digit</div>
+    <div class="col">
+        <input type="number" id="neutroNum" name="neutroNum" class="form-control" />
+        <button type="button" class="btn btn-primary mt-2" onclick="neutrolizeNum()">Neutrolize</button>
+        <p id="neutroResult"></p>
+        <script>
+            function neutrolizeNum() {
+                let num = Number(document.getElementById('neutroNum').value);
+                let result = "";
+                let moduVal = 0;
+
+                //51 => 5 + 1 => 6
+                // moduVal = num % 10;  // 1
+                // num = Math.floor(num /10); //5
+                // moduVal = moduVal + (num % 10); // 1 + 5
+                // num = Math.floor(num /10); //0
+                // result = moduVal;
+
+                while (num != 0) {
+                    console.log("Before Num : " + num + " Modu :" + moduVal);
+                    moduVal += num % 10;
+                    num = Math.floor(num / 10);
+                    console.log("After Num : " + num + " Modu :" + moduVal);
+                    if (num == 0 && moduVal > 9) {
+                        num = moduVal;
+                        moduVal = 0;
+                    }
+                }
+
+                document.getElementById('neutroResult').innerHTML = moduVal;
+            }
+        </script>
+    </div>
+</div>

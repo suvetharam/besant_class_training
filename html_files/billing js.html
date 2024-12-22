@@ -57,6 +57,22 @@
                     </form>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
         </nav>
         <div class="row mt-4">
             <div class="col">Product Name</div>
@@ -64,7 +80,7 @@
             <div class="col">Count</div>
             <div class="col">Total</div>
             <div class="col">Action</div>
-        </div>z
+        </div>
         <div class="row mt-4">
             <div class="col">
                 <select class="form-select">
@@ -76,24 +92,33 @@
                     <option>Salvar</option>
                 </select>
             </div>
-            <div class="col"><input type="text" id="pPrice" name="pPrice" class="form-control" /></div>
-            <div class="col"><input type="text" id="pCount" name="pCount" class="form-control" /></div>
-            <div class="col"><input type="text" id="pTotal" name="pTotal" class="form-control" /></div>
-            <div class="col"><button type="button" class="btn btn-success">Add Product</button>
-                <div>
-                </div>
+            <div class="col"><input type="text" id="pPrice" name="pPrice" onkeyup="getTotal()" class="form-control" />
             </div>
-            <div class="row mt-5">
-                <div class="col">T.shirt</div>
-                <div class="col">500</div>
-                <div class="col">2</div>
-                <div class="col">1000</div>
-                <div class="col">
-                    <button type="button" class="btn btn-warning">Update</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
+            <div class="col"><input type="text" id="pCount" name="pCount" onkeyup="getTotal()" class="form-control" />
             </div>
+            <div class="col"><input type="text" id="pTotal" name="pTotal" class="form-control" disabled /></div>
+            <div class="col"><button type="button" class="btn btn-success">Add Product</button></div>
+        </div>
 
+        <div class="row mt-5">
+            <div class="col">T.shirt</div>
+            <div class="col">500</div>
+            <div class="col">2</div>
+            <div class="col">1000</div>
+            <div class="col">
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getTotal() {
+            let pPrice = Number(document.getElementById('pPrice').value);
+            let pCount = Number(document.getElementById('pCount').value);
+            let pTotal = pPrice * pCount;
+            document.getElementById('pTotal').value = pTotal;
+        }
+    </script>
 
 </body>
 

@@ -1,0 +1,27 @@
+<!-- 2.  Print The 5 Multiplication Table Till 10 In the Screen --->
+<!--- example: 5*1=5 --->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        const number = 5;
+        let output = '';
+
+        for (let i = 1; i <= 10; i++) {
+            output += `${number} x ${i} = ${number * i}<br>`;
+        }
+
+        document.getElementById('output').innerHTML = output;
+    </script>
+</body>
+
+</html>

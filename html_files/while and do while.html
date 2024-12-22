@@ -1,0 +1,36 @@
+<div class="row mt-4">
+    <div class="col">For Loop</div>
+    <div class="col">
+        <p id="forLoopResult"></p>
+        <script>
+            function forLoopEx() {
+
+                let result = "";
+                //initialization ; condition; incre/decre
+                for (let num = 1; num <= 10; num++) {
+                    console.log(num);
+                    result += num + "<br>";  // result = result + num;
+                }
+
+                for (let num = 100; num > 90; num--) {
+                    result += num + "<br>";
+
+                }
+                document.getElementById('forLoopResult').innerHTML = result;
+
+                let whNum = 500;
+                while (whNum < 310) {
+                    console.log(whNum);
+                    whNum++;
+                }
+
+                let dWhNum = 600;
+                do {
+                    console.log(dWhNum);
+                    dWhNum++;
+                } while (dWhNum < 410);
+            }
+            forLoopEx();
+        </script>
+    </div>
+</div>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic signal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <p class="h1 text-danger d-flex justify-content-center">TRAFFIC SIGNAL</p>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col1"></div>
+            <div class="col2">NW<div id="nwDiv"></div>
+            </div>
+            <div class="col3">NE<div id="neDiv"></div>
+            </div>
+            <div class="col4"></div>
+        </div>
+        <div class="row">
+            <div class="row1">WT<div id="wtDiv"></div>
+            </div>
+            <div class="row2"></div>
+            <div class="row1">ET<div id="etDiv"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row1">WB<div id="wbDiv"></div>
+            </div>
+            <div class="row2"></div>
+            <div class="row1">EB<div id="ebDiv"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col5"></div>
+            <div class="col6">SW<div id="swDiv"></div>
+            </div>
+            <div class="col7">SE<div id="seDiv"></div>
+            </div>
+            <div class="col8"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col"><button group="light" type="button" class="btn btn-success"
+                    onclick="north()">NORTH</button></div>
+            <div class="col"><button group="light" type="button" class="btn btn-success"
+                    onclick="south()">SOUTH</button></div>
+            <div class="col"><button group="light" type="button" class="btn btn-success" onclick="east()">EAST</button>
+            </div>
+            <div class="col"><button group="light" type="button" class="btn btn-success" onclick="west()">WEST</button>
+            </div>
+            <div class="col"><button group="light" type="button" class="btn btn-success"
+                    onclick="setDefaultSignal()">DEFAULT</button></div>
+        </div>
+    </div>
+    <script>
+        var nw, ne, et, eb, sw, se, wt, wb;
+        var light;
+        function getResult() {
+            nw = document.getElementById('nwDiv');
+            ne = document.getElementById('neDiv');
+            et = document.getElementById('etDiv');
+            eb = document.getElementById('ebDiv');
+            se = document.getElementById('seDiv');
+            sw = document.getElementById('swDiv');
+            wt = document.getElementById('wtDiv');
+            wb = document.getElementById('wbDiv');
+        }
+        getResult();
+        function setDefaultSignal() {
+
+            nw.style.backgroundColor = "green";
+            ne.style.backgroundColor = "green";
+            et.style.backgroundColor = "green";
+            eb.style.backgroundColor = "green";
+            sw.style.backgroundColor = "green";
+            se.style.backgroundColor = "green";
+            wt.style.backgroundColor = "green";
+            wb.style.backgroundColor = "green";
+        }
+        setDefaultSignal();
+        function west() {
+            setDefaultSignal();
+            nw.style.backgroundColor = "green";
+            ne.style.backgroundColor = "red";
+            et.style.backgroundColor = "green";
+            eb.style.backgroundColor = "red";
+            sw.style.backgroundColor = "red";
+            se.style.backgroundColor = "green";
+            wt.style.backgroundColor = "green";
+            wb.style.backgroundColor = "red";
+
+        }
+        function north() {
+            setDefaultSignal();
+            nw.style.backgroundColor = "green";
+            ne.style.backgroundColor = "red";
+            et.style.backgroundColor = "green";
+            eb.style.backgroundColor = "red";
+            sw.style.backgroundColor = "green";
+            se.style.backgroundColor = "red";
+            wt.style.backgroundColor = "red";
+            wb.style.backgroundColor = "green";
+
+
+        }
+        function south() {
+            setDefaultSignal();
+            nw.style.backgroundColor = "red";
+            ne.style.backgroundColor = "green";
+            et.style.backgroundColor = "red";
+            eb.style.backgroundColor = "green";
+            sw.style.backgroundColor = "red";
+            se.style.backgroundColor = "green";
+            wt.style.backgroundColor = "green";
+            wb.style.backgroundColor = "red";
+
+        }
+        function east() {
+            setDefaultSignal();
+            nw.style.backgroundColor = "red";
+            ne.style.backgroundColor = "green";
+            et.style.backgroundColor = "green";
+            eb.style.backgroundColor = "red";
+            sw.style.backgroundColor = "red";
+            se.style.backgroundColor = "green";
+            wt.style.backgroundColor = "red";
+            wb.style.backgroundColor = "green";
+
+        }
+    </script>
+    <style>
+        #nwDiv,
+        #neDiv,
+        #swDiv,
+        #seDiv {
+            width: 75px;
+            height: 120px;
+        }
+
+        #etDiv,
+        #wtDiv {
+            width: 220px;
+            height: 40px;
+        }
+
+        #ebDiv,
+        #wbDiv {
+            width: 220px;
+            height: 40px;
+        }
+
+        .col1,
+        .col4,
+        .col5,
+        .col8 {
+            width: 250px;
+            height: 150px;
+            border: solid 2px black;
+        }
+
+        .col2,
+        .col3,
+        .col6,
+        .col7 {
+            width: 100px;
+            height: 150px;
+            border: solid 2px black;
+        }
+
+        .row1 {
+            width: 250px;
+            height: 75px;
+            border: solid 2px black;
+
+        }
+
+        .row2 {
+            width: 200px;
+            height: 75px;
+            border: solid 2px black;
+
+        }
+
+        .col9 {
+            width: 200px;
+            height: 150px;
+            border: 2px solid black;
+        }
+
+        .row {
+            margin-left: 150px;
+        }
+
+        .col1,
+        .col2,
+        .col3,
+        .col4 {
+            border-top: none;
+        }
+
+        .col1,
+        .col2,
+        .col3,
+        .col4,
+        .col5,
+        .col6,
+        .col7,
+        .col8,
+        .row1,
+        .row2 {
+            border-bottom: none;
+        }
+
+        .row2,
+        .col6,
+        .col7 {
+            border-top: none;
+        }
+
+        .row1,
+        .row2 {
+            border-left: none;
+            border-right: none;
+        }
+
+        .col1,
+        .col5,
+        .col6,
+        .col7 {
+            border-left: none;
+        }
+
+        .col4,
+        .col8,
+        .col1,
+        .col2,
+        .col3,
+        .col7 {
+            border-right: none;
+        }
+    </style>
+
+
+</body>
+
+</html>
